@@ -9,11 +9,21 @@ import Foundation
 
 protocol MovieViewProtocol: AnyObject { // viewController
     var presenter: MoviePresenterProtocol? {get set}
+    func reloadData()
+    func searchBarIsEmpty() -> Bool
 }
 
 protocol MoviePresenterProtocol: AnyObject {
     var view: MovieViewProtocol? {get set}
     func viewDidLoad()
+    var numberOfRows: Int {get}
+    func categorizedMovies()
+    var numberOfSection: Int {get}
+    func numberOfRowInSection(section:Int)->Int
+    func getTitleInSection(section:Int)->String
+    func configureCell(cell:MovieCellView,index:IndexPath)
+    func getTop5RatedMovie(searchText:String)
+    var isFilterd:Bool {get}
 }
 
 protocol MovieRouterProtocol {
@@ -26,5 +36,11 @@ protocol MovieInteractorInputProtocol { // used in presenter
 }
 
 protocol MovieInteractorOutputProtocol: AnyObject {
-    
+    func getMovieList(movie:[MovieItem])
+    func getMovieError(error:String)
+}
+
+
+protocol MovieCellView {
+    func configure(entity:MovieEntity)
 }

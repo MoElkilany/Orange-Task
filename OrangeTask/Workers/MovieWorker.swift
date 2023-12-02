@@ -9,4 +9,9 @@ import Foundation
 
 class MovieWorker {
     
+    private let localData = LocalData()
+    
+    func getMovies(completionHandler: @escaping ( (MovieModel?,String?)->() ) ){
+        localData.decodeMoviesFromJSON(completionHandler: completionHandler)
+    }
 }

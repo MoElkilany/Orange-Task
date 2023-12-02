@@ -151,11 +151,11 @@
 			isa = PBXGroup;
 			children = (
 				E7A3BC052B1B215B00551143 /* Cell */,
-				E7A3BC012B1B1EEE00551143 /* MovieListViewController.swift */,
 				E7A3BC022B1B1EEE00551143 /* MovieListViewController.xib */,
+				E7A3BC012B1B1EEE00551143 /* MovieListViewController.swift */,
+				E7A3BC152B1B310600551143 /* MovieRouter.swift */,
 				E7A3BC112B1B30B500551143 /* MoviePresenter.swift */,
 				E7A3BC132B1B30E300551143 /* MovieInteractor.swift */,
-				E7A3BC152B1B310600551143 /* MovieRouter.swift */,
 				E7A3BC172B1B318300551143 /* MovieProtocol.swift */,
 			);
 			path = MovieList;

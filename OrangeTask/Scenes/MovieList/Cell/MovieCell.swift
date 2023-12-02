@@ -7,7 +7,8 @@
 
 import UIKit
 
-class MovieCell: UITableViewCell {
+class MovieCell: UITableViewCell,MovieCellView {
+ 
 
     static let reuseIdentifier = String(describing: MovieCell.self)
     
@@ -21,6 +22,10 @@ class MovieCell: UITableViewCell {
         containerView.layer.cornerRadius = 15
     }
     
-    
+    func configure(entity: MovieEntity) {
+        movieTitle.text = entity.title
+        movieYear.text = String(entity.year)
+        movieRate.text = String(entity.rating)
+    }
 
 }

@@ -19,6 +19,6 @@ class MovieRouter:MovieRouterProtocol {
         interactor.presenter = presenter
         router.viewController = view
         return view
-        }
+    }
     
 }
