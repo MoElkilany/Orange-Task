@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E7A3BBE92B1B16EC00551143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3BBE82B1B16EC00551143 /* AppDelegate.swift */; };
 		E7A3BBEB2B1B16EC00551143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3BBEA2B1B16EC00551143 /* SceneDelegate.swift */; };
-		E7A3BBED2B1B16EC00551143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3BBEC2B1B16EC00551143 /* ViewController.swift */; };
 		E7A3BBF02B1B16EC00551143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A3BBEE2B1B16EC00551143 /* Main.storyboard */; };
 		E7A3BBF22B1B16EE00551143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7A3BBF12B1B16EE00551143 /* Assets.xcassets */; };
 		E7A3BBF52B1B16EE00551143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A3BBF32B1B16EE00551143 /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 		E7A3BBE52B1B16EC00551143 /* OrangeTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrangeTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A3BBE82B1B16EC00551143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7A3BBEA2B1B16EC00551143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E7A3BBEC2B1B16EC00551143 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7A3BBEF2B1B16EC00551143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7A3BBF12B1B16EE00551143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7A3BBF42B1B16EE00551143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +54,38 @@
 		E7A3BBE72B1B16EC00551143 /* OrangeTask */ = {
 			isa = PBXGroup;
 			children = (
-				E7A3BBE82B1B16EC00551143 /* AppDelegate.swift */,
-				E7A3BBEA2B1B16EC00551143 /* SceneDelegate.swift */,
-				E7A3BBEC2B1B16EC00551143 /* ViewController.swift */,
+				E7A3BBFE2B1B1D3800551143 /* Core */,
+				E7A3BBFD2B1B1D0800551143 /* Resources */,
+				E7A3BBFC2B1B1B9700551143 /* Configration */,
+			);
+			path = OrangeTask;
+			sourceTree = "<group>";
+		};
+		E7A3BBFC2B1B1B9700551143 /* Configration */ = {
+			isa = PBXGroup;
+			children = (
+				E7A3BBF62B1B16EE00551143 /* Info.plist */,
+			);
+			path = Configration;
+			sourceTree = "<group>";
+		};
+		E7A3BBFD2B1B1D0800551143 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				E7A3BBEE2B1B16EC00551143 /* Main.storyboard */,
 				E7A3BBF12B1B16EE00551143 /* Assets.xcassets */,
 				E7A3BBF32B1B16EE00551143 /* LaunchScreen.storyboard */,
-				E7A3BBF62B1B16EE00551143 /* Info.plist */,
 			);
-			path = OrangeTask;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E7A3BBFE2B1B1D3800551143 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E7A3BBEA2B1B16EC00551143 /* SceneDelegate.swift */,
+				E7A3BBE82B1B16EC00551143 /* AppDelegate.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +159,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7A3BBED2B1B16EC00551143 /* ViewController.swift in Sources */,
 				E7A3BBE92B1B16EC00551143 /* AppDelegate.swift in Sources */,
 				E7A3BBEB2B1B16EC00551143 /* SceneDelegate.swift in Sources */,
 			);
@@ -289,7 +309,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LRDS6PV5N3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OrangeTask/Info.plist;
+				INFOPLIST_FILE = OrangeTask/Configration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -320,7 +340,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LRDS6PV5N3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OrangeTask/Info.plist;
+				INFOPLIST_FILE = OrangeTask/Configration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
