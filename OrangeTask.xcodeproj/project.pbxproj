@@ -17,6 +17,9 @@
 		E7A3BC042B1B1EEE00551143 /* MovieListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A3BC022B1B1EEE00551143 /* MovieListViewController.xib */; };
 		E7A3BC082B1B227700551143 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3BC062B1B227700551143 /* MovieCell.swift */; };
 		E7A3BC092B1B227700551143 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A3BC072B1B227700551143 /* MovieCell.xib */; };
+		E7A3BC0C2B1B2A5E00551143 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3BC0B2B1B2A5E00551143 /* NetworkLayer.swift */; };
+		E7A3BC0E2B1B2A7700551143 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3BC0D2B1B2A7700551143 /* Constants.swift */; };
+		E7A3BC102B1B2AB900551143 /* MovieRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3BC0F2B1B2AB900551143 /* MovieRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		E7A3BC022B1B1EEE00551143 /* MovieListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListViewController.xib; sourceTree = "<group>"; };
 		E7A3BC062B1B227700551143 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		E7A3BC072B1B227700551143 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		E7A3BC0B2B1B2A5E00551143 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		E7A3BC0D2B1B2A7700551143 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E7A3BC0F2B1B2AB900551143 /* MovieRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +60,6 @@
 				66BDC583201C687283AEF5E1 /* Pods-OrangeTask.debug.xcconfig */,
 				712B48FE3DE4B93AB71CF341 /* Pods-OrangeTask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -79,6 +84,7 @@
 		E7A3BBE72B1B16EC00551143 /* OrangeTask */ = {
 			isa = PBXGroup;
 			children = (
+				E7A3BC0A2B1B29A500551143 /* Network */,
 				E7A3BBFF2B1B1E7400551143 /* Scenes */,
 				E7A3BBFE2B1B1D3800551143 /* Core */,
 				E7A3BBFD2B1B1D0800551143 /* Resources */,
@@ -139,6 +145,16 @@
 				E7A3BC072B1B227700551143 /* MovieCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		E7A3BC0A2B1B29A500551143 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E7A3BC0B2B1B2A5E00551143 /* NetworkLayer.swift */,
+				E7A3BC0D2B1B2A7700551143 /* Constants.swift */,
+				E7A3BC0F2B1B2AB900551143 /* MovieRouter.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		EDD6B3848F25AC3945734A4F /* Frameworks */ = {
@@ -268,8 +284,11 @@
 			files = (
 				E7A3BC032B1B1EEE00551143 /* MovieListViewController.swift in Sources */,
 				E7A3BBE92B1B16EC00551143 /* AppDelegate.swift in Sources */,
+				E7A3BC102B1B2AB900551143 /* MovieRouter.swift in Sources */,
 				E7A3BC082B1B227700551143 /* MovieCell.swift in Sources */,
+				E7A3BC0C2B1B2A5E00551143 /* NetworkLayer.swift in Sources */,
 				E7A3BBEB2B1B16EC00551143 /* SceneDelegate.swift in Sources */,
+				E7A3BC0E2B1B2A7700551143 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
