@@ -8,6 +8,8 @@
 import Foundation
 
 class MoviePresenter:MoviePresenterProtocol, MovieInteractorOutputProtocol {
+   
+    
        
     weak var view: MovieViewProtocol?
     private let interactor: MovieInteractorInputProtocol?
@@ -21,6 +23,7 @@ class MoviePresenter:MoviePresenterProtocol, MovieInteractorOutputProtocol {
         self.interactor = interactor
         self.router = router
     }
+    
     
     func viewDidLoad() {
         interactor?.getMovies()
@@ -89,9 +92,28 @@ class MoviePresenter:MoviePresenterProtocol, MovieInteractorOutputProtocol {
         self.view?.reloadData()
     }
     
-    
     var isFilterd: Bool {
         return  !(self.view?.searchBarIsEmpty() ?? true)
     }
+    
+    func didSelectMovie(selectMovie: MovieItem) {
+        router?.pushToDetails(movie: selectMovie)
+    }
+    
+    func getSelectedMovie(index: IndexPath) -> MovieItem? {
+        let year = isFilterd ? Array(filtedMovies.keys.sorted())[index.section] : Array(categorizedMoviesByYear.keys.sorted())[index.section]
+        
+        if let moviesForYear = isFilterd ? filtedMovies[year] : categorizedMoviesByYear[year] {
+            // Check if the row index is within the bounds of the movies for the selected year
+            if index.row < moviesForYear.count {
+                let selectedMovie = moviesForYear[index.row]
+                print("selectedMovie \(selectedMovie)")
+                return selectedMovie
+            }
+        }
+        
+        return nil
+    }
+
     
 }

@@ -14,20 +14,22 @@ protocol MovieViewProtocol: AnyObject { // viewController
 }
 
 protocol MoviePresenterProtocol: AnyObject {
-    var view: MovieViewProtocol? {get set}
+    var  view: MovieViewProtocol? {get set}
     func viewDidLoad()
-    var numberOfRows: Int {get}
+    var  numberOfRows: Int {get}
     func categorizedMovies()
-    var numberOfSection: Int {get}
+    var  numberOfSection: Int {get}
     func numberOfRowInSection(section:Int)->Int
     func getTitleInSection(section:Int)->String
     func configureCell(cell:MovieCellView,index:IndexPath)
     func getTop5RatedMovie(searchText:String)
-    var isFilterd:Bool {get}
+    var  isFilterd:Bool {get}
+    func didSelectMovie(selectMovie: MovieItem)
+    func getSelectedMovie(index:IndexPath)-> MovieItem?
 }
 
 protocol MovieRouterProtocol {
-    
+    func pushToDetails( movie: MovieItem)
 }
 
 protocol MovieInteractorInputProtocol { // used in presenter

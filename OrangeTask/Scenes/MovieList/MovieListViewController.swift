@@ -8,7 +8,8 @@
 import UIKit
 
 class MovieListViewController: UIViewController, MovieViewProtocol {
-   
+    
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var moviesTableView: UITableView!
     
@@ -65,6 +66,11 @@ extension MovieListViewController: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.reuseIdentifier) as? MovieCell
         presenter?.configureCell(cell: cell!  , index: indexPath)
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let selectedMovie = presenter?.getSelectedMovie(index: indexPath) ?? MovieItem(title: "", year: 0, cast: [], genres: [], rating: 0)
+        presenter?.didSelectMovie(selectMovie: selectedMovie)
     }
 }
 
