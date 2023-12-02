@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
             let movieListViewController = MovieListViewController()
 
-        let navigationController = UINavigationController(rootViewController: movieListViewController)
+        let navigationController = UINavigationController(rootViewController: MovieRouter.createModule())
 
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navigationController

@@ -1,5 +1,5 @@
 //
-//  MovieRouter.swift
+//  Router.swift
 //  OrangeTask
 //
 //  Created by Elkilany on 02/12/2023.
@@ -7,8 +7,8 @@
 
 import Foundation
 import Alamofire
-
-enum UserRouter: URLRequestConvertible {
+ 
+enum Router: URLRequestConvertible {
     
     case get
     
@@ -30,7 +30,7 @@ enum UserRouter: URLRequestConvertible {
         let relativePath : String?
         switch self {
         case .get:
-            relativePath = Constants.usersEndpoint
+            relativePath = Constants.baseURL
         }
         
         var url = URL(string: Constants.baseURL)!

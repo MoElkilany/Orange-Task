@@ -7,18 +7,30 @@
 
 import UIKit
 
-class MovieListViewController: UIViewController {
-
+class MovieListViewController: UIViewController, MovieViewProtocol {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var moviesTableView: UITableView!
+    
+    var presenter: MoviePresenterProtocol?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Movies"
+        searchBar.placeholder = "movie name"
+        setupTableView()
+        presenter?.viewDidLoad()
+    }
+    
+    private func setupTableView(){
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
         moviesTableView.register(UINib(nibName: MovieCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MovieCell.reuseIdentifier)
     }
- 
 }
+
+
+
 
 extension MovieListViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
