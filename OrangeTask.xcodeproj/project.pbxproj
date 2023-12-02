@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDACAA41E518C48CD3D5AF5A /* Pods_OrangeTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232C7F901458F67E0FFAF345 /* Pods_OrangeTask.framework */; };
 		E7A3BBE92B1B16EC00551143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3BBE82B1B16EC00551143 /* AppDelegate.swift */; };
 		E7A3BBEB2B1B16EC00551143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3BBEA2B1B16EC00551143 /* SceneDelegate.swift */; };
 		E7A3BBF02B1B16EC00551143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A3BBEE2B1B16EC00551143 /* Main.storyboard */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		232C7F901458F67E0FFAF345 /* Pods_OrangeTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrangeTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66BDC583201C687283AEF5E1 /* Pods-OrangeTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrangeTask.debug.xcconfig"; path = "Target Support Files/Pods-OrangeTask/Pods-OrangeTask.debug.xcconfig"; sourceTree = "<group>"; };
+		712B48FE3DE4B93AB71CF341 /* Pods-OrangeTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrangeTask.release.xcconfig"; path = "Target Support Files/Pods-OrangeTask/Pods-OrangeTask.release.xcconfig"; sourceTree = "<group>"; };
 		E7A3BBE52B1B16EC00551143 /* OrangeTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrangeTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A3BBE82B1B16EC00551143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7A3BBEA2B1B16EC00551143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,17 +41,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDACAA41E518C48CD3D5AF5A /* Pods_OrangeTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22E0328DED3F6767CD4DECCB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				66BDC583201C687283AEF5E1 /* Pods-OrangeTask.debug.xcconfig */,
+				712B48FE3DE4B93AB71CF341 /* Pods-OrangeTask.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E7A3BBDC2B1B16EC00551143 = {
 			isa = PBXGroup;
 			children = (
 				E7A3BBE72B1B16EC00551143 /* OrangeTask */,
 				E7A3BBE62B1B16EC00551143 /* Products */,
+				22E0328DED3F6767CD4DECCB /* Pods */,
+				EDD6B3848F25AC3945734A4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +141,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		EDD6B3848F25AC3945734A4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				232C7F901458F67E0FFAF345 /* Pods_OrangeTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7A3BBF92B1B16EE00551143 /* Build configuration list for PBXNativeTarget "OrangeTask" */;
 			buildPhases = (
+				1D7633CB57F43BB4E86F77E1 /* [CP] Check Pods Manifest.lock */,
 				E7A3BBE12B1B16EC00551143 /* Sources */,
 				E7A3BBE22B1B16EC00551143 /* Frameworks */,
 				E7A3BBE32B1B16EC00551143 /* Resources */,
+				6CA40A43E5199E69BACF0237 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +218,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D7633CB57F43BB4E86F77E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrangeTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CA40A43E5199E69BACF0237 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrangeTask/Pods-OrangeTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrangeTask/Pods-OrangeTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrangeTask/Pods-OrangeTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E7A3BBE12B1B16EC00551143 /* Sources */ = {
@@ -342,6 +411,7 @@
 		};
 		E7A3BBFA2B1B16EE00551143 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66BDC583201C687283AEF5E1 /* Pods-OrangeTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -373,6 +443,7 @@
 		};
 		E7A3BBFB2B1B16EE00551143 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 712B48FE3DE4B93AB71CF341 /* Pods-OrangeTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
