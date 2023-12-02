@@ -9,8 +9,6 @@ import UIKit
 
 class MovieListViewController: UIViewController, MovieViewProtocol {
    
-    
-    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var moviesTableView: UITableView!
     

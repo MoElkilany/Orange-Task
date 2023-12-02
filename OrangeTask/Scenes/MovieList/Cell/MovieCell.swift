@@ -19,13 +19,22 @@ class MovieCell: UITableViewCell,MovieCellView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.layer.cornerRadius = 15
+        setupContainerView(containerView: containerView)
     }
     
     func configure(entity: MovieEntity) {
         movieTitle.text = entity.title
-        movieYear.text = String(entity.year)
-        movieRate.text = String(entity.rating)
+        movieYear.text = "Year \(entity.year)"
+        movieRate.text = "Rate \(entity.rating)"
     }
 
+    
+    private func setupContainerView(containerView:UIView){
+        containerView.layer.cornerRadius = 10
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOpacity = 0.2
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        containerView.layer.shadowRadius = 2
+    }
+    
 }
