@@ -10,38 +10,48 @@ import Alamofire
  
 enum Router: URLRequestConvertible {
     
-    case get
+    case getPhotos(movieTitle: String, page: Int)
     
     var method: HTTPMethod {
         switch self {
-        case .get:
+        case .getPhotos:
             return .get
         }
     }
     
-    var parameters: [String : Any]? {
+    var parameters: [String: Any]? {
         switch self {
-        case .get:
-            return nil
+        case .getPhotos(let movieTitle, let page):
+            
+            var params: [String: Any] = [
+                "method": "flickr.photos.search",
+                "api_key": Constants.apiKey,
+                "format": "json",
+                "nojsoncallback": 1,
+                "text": movieTitle,
+                "page": page,
+                "per_page": 10
+            ]
+            return params
         }
     }
     
     var url: URL {
-        let relativePath : String?
         switch self {
-        case .get:
-            relativePath = Constants.baseURL
+            
+        case .getPhotos:
+            var components = URLComponents(string: Constants.baseURL)!
+            components.queryItems = parameters?.map { key, value in
+                URLQueryItem(name: key, value: "\(value)")
+            }
+            return components.url!
+            
         }
-        
-        var url = URL(string: Constants.baseURL)!
-        if let relativePath = relativePath {
-            url = url.appendingPathComponent(relativePath)
-        }
-        return url
     }
     
     var encoding: ParameterEncoding {
-        return JSONEncoding.default
+        return URLEncoding.default
+        
     }
     
     func asURLRequest() throws -> URLRequest {
@@ -50,4 +60,6 @@ enum Router: URLRequestConvertible {
         return try encoding.encode(urlRequest, with: parameters)
     }
 }
+
+
 

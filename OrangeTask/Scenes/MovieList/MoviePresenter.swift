@@ -8,9 +8,7 @@
 import Foundation
 
 class MoviePresenter:MoviePresenterProtocol, MovieInteractorOutputProtocol {
-   
     
-       
     weak var view: MovieViewProtocol?
     private let interactor: MovieInteractorInputProtocol?
     private let router: MovieRouterProtocol?
@@ -53,7 +51,7 @@ class MoviePresenter:MoviePresenterProtocol, MovieInteractorOutputProtocol {
     
     func configureCell(cell: MovieCellView, index: IndexPath) {
         
-        let year = Array( isFilterd ?  filtedMovies.keys.sorted() : categorizedMoviesByYear.keys.sorted() )[index.section]
+    let year = Array( isFilterd ?  filtedMovies.keys.sorted() : categorizedMoviesByYear.keys.sorted() )[index.section]
         if  let movie = isFilterd ?  filtedMovies[year]?[index.row] : categorizedMoviesByYear[year]?[index.row]{
             let entity = MovieEntity(movieItem: movie)
             cell.configure(entity: entity)

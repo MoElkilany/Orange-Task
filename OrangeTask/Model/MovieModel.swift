@@ -19,8 +19,7 @@ struct MovieItem: Codable {
     let rating: Int
 }
 
-
-struct MovieEntity{
+struct MovieEntity {
     var title: String
     var year: Int
     var rating: Int
